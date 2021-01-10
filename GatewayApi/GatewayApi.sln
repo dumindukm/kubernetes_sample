@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GatewayApi", "GatewayApi\GatewayApi.csproj", "{EB1F5B1F-DA0C-4EC1-B1F3-CCC51F4C95A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApp", "WebApp\WebApp.csproj", "{2B90B84E-C286-4443-9C53-8DC2DBE80DE2}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{EABF40FA-40A3-4772-9873-50E176539C72}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB1F5B1F-DA0C-4EC1-B1F3-CCC51F4C95A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1F5B1F-DA0C-4EC1-B1F3-CCC51F4C95A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1F5B1F-DA0C-4EC1-B1F3-CCC51F4C95A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1F5B1F-DA0C-4EC1-B1F3-CCC51F4C95A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B90B84E-C286-4443-9C53-8DC2DBE80DE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B90B84E-C286-4443-9C53-8DC2DBE80DE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B90B84E-C286-4443-9C53-8DC2DBE80DE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B90B84E-C286-4443-9C53-8DC2DBE80DE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EABF40FA-40A3-4772-9873-50E176539C72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EABF40FA-40A3-4772-9873-50E176539C72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EABF40FA-40A3-4772-9873-50E176539C72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EABF40FA-40A3-4772-9873-50E176539C72}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5042AFB2-E70B-4ACF-B657-22BCE72B6F4C}
+	EndGlobalSection
+EndGlobal
