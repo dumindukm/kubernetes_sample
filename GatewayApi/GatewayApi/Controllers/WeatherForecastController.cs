@@ -26,6 +26,8 @@ namespace GatewayApi.Controllers
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.LogInformation(System.AppDomain.CurrentDomain.BaseDirectory);
+            _logger.LogInformation(System.IO.File.Exists(System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory,"file_share", "weather_forecast.json")).ToString());
             var rng = new Random();
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {

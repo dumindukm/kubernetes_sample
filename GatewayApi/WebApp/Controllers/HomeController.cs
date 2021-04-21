@@ -21,6 +21,7 @@ namespace WebApp.Controllers
 
         public async Task<IActionResult> Index()
         {
+            /*
             //using (var client = new System.Net.Http.HttpClient())
             //{
             //    // Call *mywebapi*, and display its response in the page
@@ -48,7 +49,7 @@ namespace WebApp.Controllers
                 var response = await client.SendAsync(request);
                 ViewData["Message"] += " and " + await response.Content.ReadAsStringAsync();
             }
-
+            */
             return View();
         }
 
