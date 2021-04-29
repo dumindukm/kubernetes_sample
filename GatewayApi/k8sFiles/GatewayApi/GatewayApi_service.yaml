@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mygatewayapi-service
+spec:
+  selector:
+    app: mygateway
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 51080
+# kubectl apply -f WebApp_service.yaml

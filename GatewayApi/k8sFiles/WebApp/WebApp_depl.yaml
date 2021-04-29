@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-deployment
+  labels:
+    app: webapp
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: webapp
+  template:
+    metadata:
+      labels:
+        app: webapp
+    spec:
+      containers:
+      - name: mywebappcnt
+        image: mywebapp:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+# kubectl apply -f WebApp_depl.yaml

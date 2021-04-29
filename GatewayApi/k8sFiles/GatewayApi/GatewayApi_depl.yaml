@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Gatewayapi-deployment
+  labels:
+    app: mygateway
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mygateway
+  template:
+    metadata:
+      labels:
+        app: mygateway
+    spec:
+      containers:
+      - name: mygatewaycnt
+        image: mygateway:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+# kubectl apply -f WebApp_depl.yaml

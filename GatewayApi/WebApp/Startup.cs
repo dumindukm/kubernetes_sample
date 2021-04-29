@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using WebApp.Services;
+using WebApp.Services.Interfaces;
 
 namespace WebApp
 {
@@ -24,9 +25,10 @@ namespace WebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddHttpClient<WeatherForecastService>(c => {
+            services.AddHttpClient<IWeatherForecastService,WeatherForecastService>(c => {
                 c.BaseAddress = new Uri(Configuration.GetValue<string>("ApiGateway"));
             });
+
             services.AddControllersWithViews();
 
         }

@@ -5,20 +5,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using WebApp.Models;
+using WebApp.Services;
+using WebApp.Services.Interfaces;
 
 namespace WebApp.Controllers
 {
     public class WeatherForecastController : Controller
     {
-        public WeatherForecastController()
-        {
+        private readonly IWeatherForecastService weatherservice;
 
+        public WeatherForecastController(IWeatherForecastService weatherservice)
+        {
+            this.weatherservice = weatherservice;
         }
 
         // GET: WeatherForecastController
-        public ActionResult Index()
+        public async Task<ActionResult> Index()
         {
             List<WeatherForecastViewodel> forecasts = new List<WeatherForecastViewodel>();
+            forecasts = await this.weatherservice.GetforecastsAsync();
             return View(forecasts);
         }
 
