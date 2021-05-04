@@ -26,7 +26,7 @@ namespace WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpClient<IWeatherForecastService,WeatherForecastService>(c => {
-                c.BaseAddress = new Uri(Configuration.GetValue<string>("ApiGateway"));
+                c.BaseAddress = new Uri(Configuration.GetValue<string>("ApiGatewayUrl"));
             });
 
             services.AddControllersWithViews();

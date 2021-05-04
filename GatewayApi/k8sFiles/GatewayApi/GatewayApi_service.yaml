@@ -7,6 +7,6 @@ spec:
     app: mygateway
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 51080
+      port: 51080
+      targetPort: 80
 # kubectl apply -f WebApp_service.yaml

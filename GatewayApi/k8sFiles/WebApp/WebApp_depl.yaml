@@ -20,4 +20,11 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
+        env:
+        - name: ApiGatewayUrl
+          valueFrom:
+            secretKeyRef:
+              name: mywebapp-secret
+              key: APIGATEWAY-URL
+
 # kubectl apply -f WebApp_depl.yaml
