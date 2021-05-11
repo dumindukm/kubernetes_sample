@@ -5,6 +5,8 @@
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Comes from configMap when deploy through K8s. ApiTenantKey =  @ViewBag.ApiTenantKey</p>
+    <p>Comes from SecretMap when deploy through K8s. ApiGatewayUrl =  @ViewBag.ApiGatewayUrl</p>
     <a href="http://gatewayapi/WeatherForecast" target="_blank">http://gatewayapi/WeatherForecast</a><br />
     <a href="http://localhost:51080/WeatherForecast" target="_blank">localhost:51080</a><br />
     <a href="http://172.23.16.1:51080/WeatherForecast" target="_blank">172.23.16.1:51080</a><br />

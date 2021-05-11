@@ -23,8 +23,15 @@ spec:
         env:
         - name: ApiGatewayUrl
           valueFrom:
+            configMapKeyRef:
+              name: mywebapp-config
+              key: APIGATEWAY-URL
+        - name: ApiTenantKey
+          valueFrom:
             secretKeyRef:
               name: mywebapp-secret
-              key: APIGATEWAY-URL
+              key: APITENANT-KEY
+        - name: ASPNETCORE_ENVIRONMENT
+          value: Development
 
 # kubectl apply -f WebApp_depl.yaml

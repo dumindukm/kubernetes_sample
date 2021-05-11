@@ -5,6 +5,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using WebApp.Models;
 
@@ -13,10 +14,12 @@ namespace WebApp.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IConfiguration config;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IConfiguration config)
         {
             _logger = logger;
+            this.config = config;
         }
 
         public async Task<IActionResult> Index()
@@ -50,6 +53,10 @@ namespace WebApp.Controllers
                 ViewData["Message"] += " and " + await response.Content.ReadAsStringAsync();
             }
             */
+
+            ViewBag.ApiGatewayUrl = config.GetValue<string>("ApiGatewayUrl");
+            ViewBag.ApiTenantKey = config.GetValue<string>("ApiTenantKey");
+
             return View();
         }
 

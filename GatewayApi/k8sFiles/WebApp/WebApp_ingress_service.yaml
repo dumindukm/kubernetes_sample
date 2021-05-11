@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mywebapp-ingress
+spec:
+  rules:
+  - host: "mywebapp.com"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: mywebapp-internal-service
+            port:
+              number: 50080
+
+
+# minikube addons enable ingress not work with docker for windows. use below
+# kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.46.0/deploy/static/provider/cloud/deploy.yaml
+# kubectl apply -f WebApp_ingress_service.yaml

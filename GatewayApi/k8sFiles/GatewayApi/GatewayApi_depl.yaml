@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Gatewayapi-deployment
+  name: gatewayapi-deployment
   labels:
     app: mygateway
 spec:
@@ -20,4 +20,4 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
-# kubectl apply -f WebApp_depl.yaml
+# kubectl apply -f GatewayApi_depl.yaml
