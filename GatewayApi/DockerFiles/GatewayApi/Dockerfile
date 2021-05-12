@@ -1,5 +1,8 @@
 #docker build -t mygateway -f ../DockerFiles/GatewayApi/Dockerfile .
 
+# docker tag mygateway localhost:5000/mygateway
+# docker push localhost:5000/mygateway
+
 # docker run -d -p 51080:80 --name api_gateway mygateway
 # docker run -it --rm -p 51080:80 -p 51443:443 --name api_gateway mygateway
 # docker run -it --rm -p 51080:80 -p 51443:443 -v D:\Work\vs2019\kubernetes_sample\file_share:/app/file_share --name api_gateway mygateway

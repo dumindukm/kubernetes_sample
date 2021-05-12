@@ -20,4 +20,15 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
+        volumeMounts:
+        - mountPath: "/app/file_share"
+          name: task-pv-storage
+        env:
+        - name: DataDirectory
+          value: "/app"
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: task-pv-claim
 # kubectl apply -f GatewayApi_depl.yaml
+# https://kubernetes.io/docs/tasks/configure-pod-container/configure-persistent-volume-storage/

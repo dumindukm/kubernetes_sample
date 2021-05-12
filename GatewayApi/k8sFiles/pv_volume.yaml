@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: task-pv-volume
+  labels:
+    type: local
+spec:
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/file_share"
+    type: DirectoryOrCreate
+
+# in minikube first mount local drive location to minikube VM using below command
+# minikube mount c:/myfolder:/mnt/data
