@@ -27,6 +27,12 @@ namespace WebApp.Controllers
             return View(forecasts);
         }
 
+        public async Task<ActionResult> ApiVersion()
+        {
+            var apiVersion = await this.weatherservice.GetApiVersion();
+            return View("ApiVersion",apiVersion);
+        }
+
         // GET: WeatherForecastController/Details/5
         public ActionResult Details(int id)
         {

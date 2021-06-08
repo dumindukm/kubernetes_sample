@@ -32,6 +32,13 @@ namespace GatewayApi.Controllers
         public IConfiguration Config { get; }
 
         [HttpGet]
+        [Route("api_version")]
+        public IActionResult GetVersion()
+        {
+            return Ok("Version 2");
+        }
+
+        [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
             _logger.LogInformation(System.AppDomain.CurrentDomain.BaseDirectory);

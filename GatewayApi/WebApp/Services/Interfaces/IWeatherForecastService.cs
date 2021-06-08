@@ -9,5 +9,6 @@ namespace WebApp.Services.Interfaces
     public interface IWeatherForecastService
     {
         Task<List<WeatherForecastViewodel>> GetforecastsAsync();
+        Task<string> GetApiVersion();
     }
 }

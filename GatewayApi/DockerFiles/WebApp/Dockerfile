@@ -5,7 +5,7 @@
 # docker tag mywebapp localhost:5000/mywebapp
 # docker push localhost:5000/mywebapp
 
-
+# minikube docker-env | Invoke-Expression
 
 # docker run -d -p 50080:80 --name my_webapp mywebapp
 # docker run -it --rm -p 50080:80 -p 50443:443 --name my_webapp mywebapp

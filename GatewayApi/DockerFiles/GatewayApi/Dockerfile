@@ -1,4 +1,4 @@
-#docker build -t mygateway -f ../DockerFiles/GatewayApi/Dockerfile .
+#docker build -t mygateway:v1 -f ../DockerFiles/GatewayApi/Dockerfile .
 
 # docker tag mygateway localhost:5000/mygateway
 # docker push localhost:5000/mygateway

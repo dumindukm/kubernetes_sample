@@ -4,19 +4,58 @@ metadata:
   name: gatewayapi-deployment
   labels:
     app: mygateway
+    version: v1
 spec:
   replicas: 2
   selector:
     matchLabels:
       app: mygateway
+      version: v1
   template:
     metadata:
       labels:
         app: mygateway
+        version: v1
     spec:
       containers:
       - name: mygatewaycnt
-        image: mygateway:latest
+        image: mygateway:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - mountPath: "/app/file_share"
+          name: task-pv-storage
+        env:
+        - name: DataDirectory
+          value: "/app"
+      volumes:
+      - name: task-pv-storage
+        persistentVolumeClaim:
+          claimName: task-pv-claim
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gatewayapi-deployment-v2
+  labels:
+    app: mygateway
+    version: v2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mygateway
+      version: v2
+  template:
+    metadata:
+      labels:
+        app: mygateway
+        version: v2
+    spec:
+      containers:
+      - name: mygatewaycnt
+        image: mygateway:v2
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

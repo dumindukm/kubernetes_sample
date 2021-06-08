@@ -34,5 +34,22 @@ namespace WebApp.Services
             return forecasts;
         }
 
+        public async Task<string> GetApiVersion()
+        {
+            string result = string.Empty;
+            var response = await httpClient.GetAsync("WeatherForecast/api_version");
+            if (!response.IsSuccessStatusCode)
+            {
+                Console.WriteLine(response.StatusCode);
+            }
+            else
+            {
+                result = await response.Content.ReadAsStringAsync();
+                
+            }
+
+            return result;
+        }
+
     }
 }
