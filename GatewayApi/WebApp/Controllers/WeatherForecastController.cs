@@ -30,6 +30,7 @@ namespace WebApp.Controllers
         public async Task<ActionResult> ApiVersion()
         {
             var apiVersion = await this.weatherservice.GetApiVersion();
+            ViewBag.Version = "ViewBag " + apiVersion.Length;
             return View("ApiVersion",apiVersion);
         }
 
